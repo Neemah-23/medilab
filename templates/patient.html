@@ -1,0 +1,32 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+
+ <form action="" class="container" method="POST">
+    {% csrf_token %}
+
+    <h1 class="text-center">PATIENT FORM</h1>
+     <p>Register here:</p>
+        <label for="name" class="form-label">Name :</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Enter patient's name" required="required">
+        <br><br>
+
+        <label for="email" class="form-label">Email Address :</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="abc@gmail.com" required="required">
+        <br><br>
+
+        <label for="mh" class="form-label">Medical History :</label>
+        <textarea name="medicalhistory" class="form-control" id="mh" cols="30" rows="5" placeholder="Type something" required="required"></textarea>
+        <br><br>
+
+        <label for="age" class="form-label">Age of patient :</label>
+        <input type="number" id="age" name="age" class="form-control" placeholder="Enter age" required="required">
+        <br><br>
+
+
+        <button type="submit" class="btn btn-outline-success">Save</button>
+    </form>
+
+{% endblock %}

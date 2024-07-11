@@ -47,7 +47,7 @@ class Appointment(models.Model):
     message = models.TextField()
     phone = models.CharField(max_length=10)
     doctor = models.CharField(max_length=10)
-    department = models.CharField(max_length=10)
+    department = models.CharField(max_length=20)
     date = models.DateField()
 
 

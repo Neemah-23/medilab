@@ -1,5 +1,4 @@
 from django.shortcuts import render,redirect
-from MedilabApp.models import Company,Patient,Appointment
 
 # Create your views here.
 def index(request):

@@ -5,7 +5,7 @@ from MedilabApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    path('index' , views.index, name='index'),
     path('start/', views.start, name='start'),
     path('about/', views.about, name='about'),
     path('services/', views.services, name='services'),
@@ -17,6 +17,6 @@ urlpatterns = [
     path('delete/<int:id>', views.delete),
     path('edit/<int:id>', views.edit),
     path('update/<int:id>', views.update),
-    path('register/', views.register, name='register'),
+    path('', views.register, name='register'),
     path('login/', views.login, name='login'),
 ]

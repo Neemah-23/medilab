@@ -1,16 +1,30 @@
+import requests
 from django.shortcuts import render, redirect
-from MedilabApp.models import Appointment, Company, Patient
+from MedilabApp.models import Appointment, Company, Patient, Member
 from MedilabApp.forms import AppointmentForm
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
 
+    if request.method == 'POST':
+
+      if Member.objects.filter(
+            username = request.POST['username'],
+            password = request.POST['password'],
+        ).exists():
+        member = Member.objects.get(
+            username = request.POST['username'],
+            password = request.POST['password'],
+        )
+        return render(request,'index.html')
+      else:
+        return render(request,'login.html')
+    else:
+     return render(request,'login.html')
 
 def start(request):
     return render(request, 'starter-page.html')
-
 
 def about(request):
     return render(request, 'About.html')
@@ -94,7 +108,16 @@ def update(request, id):
         return render(request, 'edit.html')
 
 def register(request):
-    return render(request,'register.html')
+    if request.method=='POST':
+        members = Member(
+            name=request.POST['name'],
+            username=request.POST['username'],
+            password =request.POST['password']
+        )
+        members.save()
+        return redirect('/login')
+    else:
+        return render(request,'register.html')
 
 def login(request):
-    return render(request,'login.html')
+    return render(request, 'login.html')

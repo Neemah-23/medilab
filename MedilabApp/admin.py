@@ -1,7 +1,7 @@
 from django.contrib import admin
 from MedilabApp.models import Product
 from MedilabApp.models import Student
-from MedilabApp.models import Patient,Company,Appointment,Member
+from MedilabApp.models import Patient,Company,Appointment,Member,Admin
 
 # Register your models here.
 admin.site.register(Product)
@@ -10,3 +10,4 @@ admin.site.register(Patient)
 admin.site.register(Company)
 admin.site.register(Appointment)
 admin.site.register(Member)
+admin.site.register(Admin)

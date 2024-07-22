@@ -21,5 +21,9 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('showimage/', views.show_image, name='image'),
     path('imagedelete/<int:id>', views.imagedelete),
-    path('uploadimage/', views.upload_image, name='upload')
+    path('uploadimage/', views.upload_image, name='upload'),
+    path('pay/', views.pay, name='pay'),
+    path('stk/', views.stk, name='stk'),
+    path('token/', views.token, name='token'),
+
 ]
